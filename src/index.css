@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Top 10 Characters Showcase Design System */
+
+@layer base {
+  :root {
+    /* Dark theme foundation */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    /* Card system */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --card-border: 0 0% 15%;
+    
+    /* Border color */
+    --border: 0 0% 15%;
+
+    /* Character showcase colors */
+    --primary: 280 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 100% 80%;
+
+    /* Rankings and accents */
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Text hierarchy */
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 50%;
+
+    /* Interactive elements */
+    --interactive: 280 100% 60%;
+    --interactive-hover: 280 100% 70%;
+    --interactive-glow: 280 100% 80%;
+
+    /* Gradients */
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-ranking: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+
+    /* Shadows and glows */
+    --shadow-card: 0 20px 60px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-ranking: 0 0 20px hsl(var(--accent) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-arial overflow-hidden;
+  }
+}
+
+@layer components {
+  /* Character Card Animations */
+  .card-enter {
+    animation: cardEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .card-exit {
+    animation: cardExit 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .card-slide-left {
+    animation: slideLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .card-slide-right {
+    animation: slideRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Ranking Badge Glow */
+  .ranking-glow {
+    box-shadow: var(--shadow-ranking);
+    background: var(--gradient-ranking);
+  }
+
+  /* Text Glow Effect */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  }
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-foreground)));
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  .animate-pulse-slow {
+    animation: pulse 2.5s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.9);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.8);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes expand {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
