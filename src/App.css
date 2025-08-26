@@ -1,1 +1,41 @@
+/* Custom scrollbar styles for mobile description */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
 
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Character card animations */
+.character-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-enter {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.card-slide-left {
+  opacity: 0;
+  transform: translateX(-100%) scale(0.95);
+}
+
+.card-slide-right {
+  opacity: 0;
+  transform: translateX(100%) scale(0.95);
+}
