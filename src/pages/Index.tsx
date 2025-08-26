@@ -26,16 +26,16 @@ export interface Character {
 }
 
 const images = [
-  hiccup, 
-  ishida, 
-  miles,  
-  moriaty, 
-  L, 
-  hashira, 
-  subaru, 
-  shinji, 
-  spidey, 
-  peter, 
+  1, 
+  2, 
+  3,  
+  4, 
+  5, 
+  6, 
+  7, 
+  8, 
+  9, 
+  10, 
 ];
 
 const Index = () => {
@@ -49,8 +49,7 @@ const Index = () => {
   useEffect(() => {
     const fetchCharacters = async () => {
       try {
-        const charactersRef = collection(db, "characters");
-        const q = query(charactersRef, orderBy("rank", "desc"));
+        const q = query(collection(db, "characters"), orderBy("rank", "desc"));
         const querySnapshot = await getDocs(q);
         const data = querySnapshot.docs.map(doc => doc.data());
         console.log(data);
