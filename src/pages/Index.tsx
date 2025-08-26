@@ -2,17 +2,6 @@ import { useState, useEffect } from 'react';
 import CharacterCard from '@/components/CharacterCard';
 import SwipeHandler from '@/components/SwipeHandler';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-// Import images and store in an array
-import hashira from '@/assets/hashira.jpg';
-import hiccup from '@/assets/hiccup.jpg';
-import ishida from '@/assets/ishida.jpg';
-import L from '@/assets/L.jpg';
-import miles from '@/assets/miles.jpg';
-import moriaty from '@/assets/moriaty.jpg';
-import peter from '@/assets/peter.jpg';
-import shinji from '@/assets/shinji.jpg';
-import spidey from '@/assets/spidey.jpg';
-import subaru from '@/assets/subaru.jpg';
 
 import { db } from '../firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
