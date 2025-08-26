@@ -1,1 +1,1 @@
-<h3>the link : </h3><a href="https://top10favcharacters.web.app">Click here</a>
+<h3>the link : <a href="https://top10favcharacters.web.app">top10favcharacters.web.app</a></h3>
