@@ -135,7 +135,7 @@ const Index = () => {
         <div className="min-h-screen flex flex-col items-center justify-center p-8">
           {/* Header */}
           <div className="mb-7">
-            <h1 className="text-4xl md:text-4xl font-bold text-text-primary text-glow font-arial tracking-wider">
+            <h1 className="text-2xl md:text-4xl font-bold text-text-primary text-glow font-arial tracking-wider">
               meet :
             </h1>
           </div>

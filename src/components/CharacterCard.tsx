@@ -27,20 +27,20 @@ const CharacterCard = ({ character, isVisible, animationClass }: CharacterCardPr
   return (
     <div className={`character-card ${animationClass}`}>
       {/* Mobile Layout (stacked) */}
-      <div className="block md:hidden w-full max-w-xs mx-auto">
+      <div className="block md:hidden w-full max-w-sm mx-auto px-4">
         {/* Ranking Badge with Character Name */}
-        <div className="ranking-glow rounded-full px-4 py-2 mb-3 mx-auto w-fit bg-primary">
+        <div className="ranking-glow rounded-full px-4 py-2 mb-6 mx-auto w-fit bg-primary">
           <span className="text-lg font-bold text-accent-foreground">
             #{character.rank} - {character.name}
           </span>
         </div>
 
-        {/* Character Image Container */}
-        <div className="relative mb-7 group w-[100%] mx-auto">
+        {/* Character Image Container - Even Smaller */}
+        <div className="relative mb-10 group w-56 mx-auto">
           <div className="absolute inset-0 bg-gradient-accent rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
           <div className="relative overflow-hidden rounded-xl shadow-card border border-card-border">
             {!imageLoaded && (
-              <div className="aspect-[5/4] bg-card animate-pulse flex items-center justify-center">
+              <div className="aspect-[4/5] bg-card animate-pulse flex items-center justify-center">
                 <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
               </div>
             )}
@@ -56,9 +56,9 @@ const CharacterCard = ({ character, isVisible, animationClass }: CharacterCardPr
           </div>
         </div>
 
-        {/* Character Description - Scrollable on mobile */}
-        <div className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
-          <p className="text-lg leading-relaxed text-center text-text-secondary font-arial max-w-xs mx-auto px-2">
+        {/* Character Description - Much more breathing room */}
+        <div className="max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent">
+          <p className="text-base leading-relaxed text-center text-text-secondary font-arial mx-auto px-6">
             {character.description}
           </p>
         </div>
@@ -101,7 +101,7 @@ const CharacterCard = ({ character, isVisible, animationClass }: CharacterCardPr
           {/* Right: Description - Same width as image */}
           <div className="flex-shrink-0 w-96">
             <div className="h-full">
-              <p className="text-3xl leading-relaxed text-text-secondary font-arial">
+              <p className="text-xl leading-relaxed text-text-secondary font-arial">
                 {character.description}
               </p>
             </div>
